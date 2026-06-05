@@ -1,32 +1,32 @@
 # AI4CampusDeck — UKWMS Enrollment Strategy
 
 A business proposal presentation deck for **Universitas Kristen Widya Mandala Surabaya (UKWMS)**,
-showcasing an AI-driven strategy to accelerate new student enrollment.
+showcasing a comprehensive strategy to accelerate new student enrollment by transforming the campus into a futuristic ecosystem driven by AI & FinTech.
 
 ## Three Pillars
 
-1. **AI Agent** — 24/7 conversational AI for prospect engagement
-2. **Omnichannel** — Unified experience across WhatsApp, web, social media, and on-ground events
-3. **Analytics** — Data-informed campaign optimization and ROI measurement
+1. **Early-Engagement Funnel** — Innovator Sandbox and Bridging Program (RPL) to secure student commitment since high school.
+2. **Inclusive & Ethical Value** — Women & Youth Financial Inclusivity Hub and Invezthink FinLit Track to provide real-world value from semester one.
+3. **Sustainable Career Integration** — AI-Driven Campus Micro-Agency and Corporate-Bonded Scholarships for clear career pathways.
 
 ## Eight Programs
 
 | # | Program |
 |---|---------|
-| 1 | Smart Chatbot Admission |
-| 2 | Omnichannel Lead Nurturing |
-| 3 | Predictive Prospect Scoring |
-| 4 | AI Content Generator |
-| 5 | Automated Follow-Up & Reminder |
-| 6 | Virtual Campus Tour |
-| 7 | Smart Event Management |
-| 8 | Retention Early Warning |
+| 1 | Innovator Sandbox & PoW |
+| 2 | Hybrid Nano-Degree SMA |
+| 3 | Invezthink FinLit Track |
+| 4 | Campus Micro-Agency |
+| 5 | Corporate-Bonded Track |
+| 6 | Women & Youth Hub |
+| 7 | Student Ambassador |
+| 8 | Green Ledger Campus |
 
 ## Tech Stack
 
 - **Presentation**: HTML + Tailwind CSS v4 (CDN) + Google Fonts
 - **Hosting**: GitHub Pages + custom domain
-- **Build**: None — static HTML, open index.html in any browser
+- **Build**: None — static HTML, open `index.html` in any browser
 
 ## Restrictions
 
