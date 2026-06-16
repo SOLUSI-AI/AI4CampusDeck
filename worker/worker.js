@@ -17,14 +17,18 @@ export default {
     try {
       const { messages } = await request.json();
 
-      const apiKey = env.FIREWORKS_API_KEY || env.GEMINI_API_KEY;
+      // Rotasi: pilih random dari comma-separated keys
+      const keysRaw = env.FIREWORKS_API_KEYS || env.FIREWORKS_API_KEY || "";
+      const keys = keysRaw.split(",").map(k => k.trim()).filter(Boolean);
 
-      if (!apiKey) {
+      if (keys.length === 0) {
         return new Response(
           JSON.stringify({ error: "API Key belum terkonfigurasi di Cloudflare Secrets." }),
           { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
         );
       }
+
+      const apiKey = keys[Math.floor(Math.random() * keys.length)];
 
       const aiResponse = await fetch("https://api.fireworks.ai/inference/v1/chat/completions", {
         method: "POST",
@@ -33,7 +37,7 @@ export default {
           "Authorization": `Bearer ${apiKey}`
         },
         body: JSON.stringify({
-          model: "accounts/fireworks/models/llama-v3p1-8b-instruct",
+          model: "accounts/fireworks/models/deepseek-v4-flash",
           messages: [
             {
               role: "system",
@@ -47,7 +51,20 @@ export default {
       });
 
       const data = await aiResponse.json();
-      const reply = data.choices[0].message.content;
+
+      if (!aiResponse.ok) {
+        return new Response(JSON.stringify({ error: data.error?.message || data.message || `HTTP ${aiResponse.status}`, raw: JSON.stringify(data).substring(0, 500) }), {
+          status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" }
+        });
+      }
+
+      const reply = data.choices?.[0]?.message?.content;
+
+      if (!reply) {
+        return new Response(JSON.stringify({ error: "Fireworks returned empty response", raw: JSON.stringify(data) }), {
+          status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" }
+        });
+      }
 
       return new Response(JSON.stringify({ reply }), {
         headers: { ...corsHeaders, "Content-Type": "application/json" }
