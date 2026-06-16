@@ -33,7 +33,9 @@ export default function QAConsultant() {
   }, [language]);
 
   useEffect(() => {
-    scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (messages.length > 1) {
+      scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
   }, [messages, isTyping]);
 
   const askAI = async (userText: string, currentMessages: ChatMessage[]) => {
