@@ -1,36 +1,44 @@
-# AI4CampusDeck — UKWMS Enrollment Strategy
+# Iwan Cahyo Suryadi — Portofolio & Solusi AI
 
-A business proposal presentation deck for **Universitas Kristen Widya Mandala Surabaya (UKWMS)**,
-showcasing a comprehensive strategy to accelerate new student enrollment by transforming the campus into a futuristic ecosystem driven by AI & FinTech.
+Portofolio profesional interaktif **Iwan Cahyo Suryadi** (ICS), Founder & CEO [VOXIA](https://voxia.id) dan [INVEZTHINK](https://app.invezthink.com).
 
-## Three Pillars
-
-1. **Early-Engagement Funnel** — Innovator Sandbox and Bridging Program (RPL) to secure student commitment since high school.
-2. **Inclusive & Ethical Value** — Women & Youth Financial Inclusivity Hub and Invezthink FinLit Track to provide real-world value from semester one.
-3. **Sustainable Career Integration** — AI-Driven Campus Micro-Agency and Corporate-Bonded Scholarships for clear career pathways.
-
-## Eight Programs
-
-| # | Program |
-|---|---------|
-| 1 | Innovator Sandbox & PoW |
-| 2 | Hybrid Nano-Degree SMA |
-| 3 | Invezthink FinLit Track |
-| 4 | Campus Micro-Agency |
-| 5 | Corporate-Bonded Track |
-| 6 | Women & Youth Hub |
-| 7 | Student Ambassador |
-| 8 | Green Ledger Campus |
+**Live:** [ics.qzz.io](https://ics.qzz.io)
 
 ## Tech Stack
 
-- **Presentation**: HTML + Tailwind CSS v4 (CDN) + Google Fonts
-- **Hosting**: GitHub Pages + custom domain
-- **Build**: None — static HTML, open `index.html` in any browser
+| Layer | Teknologi |
+|---|---|
+| Frontend | React 19, TypeScript, Vite 6, Tailwind CSS 4, Motion (Framer Motion) |
+| AI Chatbot | Cloudflare Worker → Fireworks AI (`llama-v3p1-8b-instruct`) |
+| Deploy | GitHub Actions CI/CD → GitHub Pages |
 
-## Restrictions
+## Fitur
 
-This repository is for **internal review only**.  
-Do not publish, distribute, or make public without prior approval from:
+- **Bilingual ID/EN** — toggle bahasa Indonesia / English
+- **Virtual AI Assistant** — Chatbot berbasis LLM untuk menjawab pertanyaan tentang VOXIA, INVEZTHINK, dan profil ICS
+- **Interactive Timeline** — Linimasa karir dengan detail per posisi
+- **Skills Showcase** — Matriks keahlian dengan filter kategori
+- **Company Simulators** — Simulasi AI Engine VOXIA + Candlestick Chart INVEZTHINK
+- **WhatsApp Contact Generator** — Draft pesan WhatsApp langsung dari browser
 
-    ics@voxia.id
+## Run Lokal
+
+```bash
+npm install
+npm run dev
+```
+
+## Deploy
+
+Push ke `main` akan trigger GitHub Actions build + deploy otomatis ke GitHub Pages (custom domain `ics.qzz.io`).
+
+Cloudflare Worker dideploy terpisah via `wrangler`:
+
+```bash
+cd worker
+npx wrangler deploy
+```
+
+## Lisensi
+
+All Rights Reserved. © 2025 Iwan Cahyo Suryadi.
