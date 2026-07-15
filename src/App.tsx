@@ -11,11 +11,17 @@ import InteractiveTimeline from './components/InteractiveTimeline';
 import SkillsShowcase from './components/SkillsShowcase';
 import QAConsultant from './components/QAConsultant';
 import ContactCTA from './components/ContactCTA';
+import CVPreview from './components/CVPreview';
 
 export default function App() {
   return (
     <LanguageProvider>
-      <div className="bg-[#0A0A0B] min-h-screen text-[#E5E7EB] font-sans selection:bg-blue-500/30 selection:text-white antialiased overflow-x-hidden">
+      {/* CV Preview — hanya muncul saat print */}
+      <div className="hidden print:block">
+        <CVPreview />
+      </div>
+
+      <div className="bg-[#0A0A0B] min-h-screen text-[#E5E7EB] font-sans selection:bg-blue-500/30 selection:text-white antialiased overflow-x-hidden no-print">
         {/* 1. Header Navigation */}
         <Header />
 

@@ -30,6 +30,288 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ==================== PRINT STYLES ==================== */
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm 15mm;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    background: white !important;
+    color: #111 !important;
+  }
+
+  /* Hide all website UI except the CV */
+  header,
+  #about,
+  #ventures,
+  #experience,
+  #skills,
+  #interactive-qa,
+  #contact,
+  .no-print {
+    display: none !important;
+  }
+
+  .cv-page {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white !important;
+    font-family: 'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif !important;
+  }
+
+  .cv-header {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%) !important;
+    color: white !important;
+    padding: 30px 35px !important;
+    margin: 0 !important;
+    page-break-after: avoid;
+  }
+
+  .cv-header-bg { display: none !important; }
+  .cv-header-content { max-width: 100% !important; }
+  .cv-name {
+    font-size: 28pt !important;
+    font-weight: 800 !important;
+    margin: 0 0 4px !important;
+    letter-spacing: -0.5px;
+    font-family: 'Playfair Display', Georgia, serif !important;
+  }
+  .cv-title {
+    font-size: 11pt !important;
+    opacity: 0.9 !important;
+    margin: 0 0 10px !important;
+    font-weight: 500;
+  }
+  .cv-contact {
+    font-size: 8.5pt !important;
+    opacity: 0.85 !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 4px !important;
+  }
+  .cv-contact-sep { margin: 0 5px !important; opacity: 0.5; }
+
+  .cv-body {
+    padding: 25px 35px !important;
+  }
+
+  .cv-section {
+    margin-bottom: 18px !important;
+    page-break-inside: avoid;
+  }
+
+  .cv-section-title {
+    font-size: 13pt !important;
+    font-weight: 700 !important;
+    color: #1e3a5f !important;
+    border-bottom: 2px solid #2563eb !important;
+    padding-bottom: 4px !important;
+    margin: 0 0 10px !important;
+    font-family: 'Playfair Display', Georgia, serif !important;
+  }
+
+  .cv-text {
+    font-size: 9pt !important;
+    line-height: 1.5 !important;
+    color: #333 !important;
+    margin: 0 0 6px !important;
+  }
+
+  /* Skills */
+  .cv-skills-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px 20px !important;
+  }
+  .cv-skills-category {
+    margin-bottom: 6px !important;
+  }
+  .cv-skills-category-title {
+    font-size: 8.5pt !important;
+    font-weight: 700 !important;
+    color: #475569 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    margin: 0 0 4px !important;
+  }
+  .cv-skills-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .cv-skill-item {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    margin-bottom: 3px !important;
+  }
+  .cv-skill-name {
+    font-size: 8pt !important;
+    color: #333 !important;
+    flex: 1 !important;
+  }
+  .cv-skill-bar {
+    width: 80px !important;
+    height: 5px !important;
+    background: #e2e8f0 !important;
+    border-radius: 3px !important;
+    overflow: hidden !important;
+    margin-left: 8px !important;
+  }
+  .cv-skill-bar-fill {
+    height: 100% !important;
+    background: #2563eb !important;
+    border-radius: 3px !important;
+  }
+
+  /* Ventures */
+  .cv-ventures {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important;
+    gap: 10px !important;
+  }
+  .cv-venture-item {
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 6px !important;
+    padding: 10px 12px !important;
+  }
+  .cv-venture-header {
+    margin-bottom: 4px !important;
+  }
+  .cv-venture-name {
+    font-size: 10pt !important;
+    font-weight: 700 !important;
+    color: #1e3a5f !important;
+    margin: 0 !important;
+  }
+  .cv-venture-role {
+    font-size: 7.5pt !important;
+    color: #2563eb !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+  }
+  .cv-venture-desc {
+    font-size: 7.5pt !important;
+    margin-bottom: 4px !important;
+  }
+  .cv-venture-features {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 3px !important;
+  }
+  .cv-venture-feature {
+    font-size: 7pt !important;
+    background: #eff6ff !important;
+    color: #1e40af !important;
+    padding: 1px 5px !important;
+    border-radius: 3px !important;
+  }
+
+  /* Experience */
+  .cv-experiences {
+    display: grid !important;
+    gap: 12px !important;
+  }
+  .cv-experience-item {
+    border-bottom: 1px solid #e2e8f0 !important;
+    padding-bottom: 10px !important;
+    page-break-inside: avoid;
+  }
+  .cv-experience-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    margin-bottom: 4px !important;
+  }
+  .cv-experience-role {
+    font-size: 10.5pt !important;
+    font-weight: 700 !important;
+    color: #111 !important;
+    margin: 0 !important;
+  }
+  .cv-experience-company {
+    font-size: 9pt !important;
+    color: #2563eb !important;
+    font-weight: 600 !important;
+  }
+  .cv-experience-meta {
+    text-align: right !important;
+    flex-shrink: 0 !important;
+  }
+  .cv-experience-period {
+    font-size: 8pt !important;
+    color: #475569 !important;
+    font-weight: 600 !important;
+    display: block !important;
+  }
+  .cv-experience-location {
+    font-size: 7.5pt !important;
+    color: #64748b !important;
+  }
+  .cv-bullets {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 4px 0 !important;
+  }
+  .cv-bullet {
+    font-size: 8pt !important;
+    color: #333 !important;
+    padding-left: 12px !important;
+    position: relative !important;
+    margin-bottom: 2px !important;
+    line-height: 1.4 !important;
+  }
+  .cv-bullet::before {
+    content: '\2022' !important;
+    position: absolute !important;
+    left: 0 !important;
+    color: #2563eb !important;
+    font-weight: bold !important;
+  }
+  .cv-tech-stack {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 3px !important;
+    margin-top: 4px !important;
+  }
+  .cv-tech-tag {
+    font-size: 7pt !important;
+    color: #475569 !important;
+    background: #f1f5f9 !important;
+    padding: 1px 6px !important;
+    border-radius: 3px !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+
+  /* Footer */
+  .cv-footer {
+    text-align: center !important;
+    padding: 15px 35px 10px !important;
+    border-top: 1px solid #e2e8f0 !important;
+    margin-top: 5px !important;
+  }
+  .cv-footer p {
+    font-size: 7.5pt !important;
+    color: #64748b !important;
+    margin: 0 !important;
+  }
+  .cv-footer-small {
+    font-size: 6.5pt !important;
+    opacity: 0.7 !important;
+    margin-top: 2px !important;
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, MessageSquare, ArrowUpRight, CheckCircle2, Send, Heart, Shield, HelpCircle } from 'lucide-react';
+import { Mail, MessageSquare, ArrowUpRight, CheckCircle2, Send, Heart, Shield, HelpCircle, FileDown } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function ContactCTA() {
@@ -70,8 +70,23 @@ export default function ContactCTA() {
               )}
             </p>
 
+            {/* Download CV Button */}
+            <button
+              onClick={() => window.print()}
+              className="w-full flex items-center gap-3.5 p-4 rounded-xl bg-gradient-to-r from-blue-600/20 to-blue-500/10 border border-blue-500/30 hover:border-blue-500/60 hover:from-blue-600/30 hover:to-blue-500/20 transition-all group cursor-pointer"
+              id="download-cv-btn"
+            >
+              <div className="p-2 bg-blue-500/10 text-blue-500 rounded-lg group-hover:scale-105 transition-transform">
+                <FileDown className="w-5 h-5" />
+              </div>
+              <div className="text-left">
+                <p className="text-xs text-blue-400 uppercase tracking-wider font-mono">{t("DOWNLOAD CV", "DOWNLOAD CV")}</p>
+                <p className="text-sm font-semibold text-white mt-0.5">{t("PDF — Siap Upload ke Upwork", "PDF — Ready for Upwork")}</p>
+              </div>
+            </button>
+
             {/* Direct Quick Info Contacts */}
-            <div className="space-y-4 pt-4">
+            <div className="space-y-4 pt-2">
               <a 
                 href={`mailto:${targetEmail}`}
                 className="flex items-center gap-3.5 p-4 rounded-xl bg-white/[0.02] border border-[#1F2937]/60 hover:border-blue-500/20 transition-all group"
