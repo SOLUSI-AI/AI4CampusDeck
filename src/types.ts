@@ -7,7 +7,7 @@ export interface Experience {
   description: string;
   bullets: string[];
   techStack: string[];
-  logoType: 'voxia' | 'invezthink' | 'generic' | 'consultancy';
+  logoType: 'voxia' | 'invezthink' | 'maxxsales' | 'generic' | 'consultancy';
   websiteUrl?: string;
 }
 
@@ -18,7 +18,7 @@ export interface Venture {
   role: string;
   description: string;
   features: string[];
-  analyticsType?: 'ai-chat' | 'trading-view';
+  analyticsType?: 'ai-chat' | 'trading-view' | 'maxxsales';
 }
 
 export interface SkillItem {
@@ -30,7 +30,7 @@ export interface SkillItem {
 export interface QAItem {
   question: string;
   answer: string;
-  category: 'about' | 'voxia' | 'invezthink' | 'collaboration';
+  category: 'about' | 'voxia' | 'invezthink' | 'maxxsales' | 'collaboration';
 }
 
 export interface MarketSignal {

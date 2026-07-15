@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowDown, Linkedin, MessageSquare, ShieldCheck, Zap, Sparkles, Building2 } from 'lucide-react';
+import { ArrowDown, Linkedin, MessageSquare, ShieldCheck, Zap, Sparkles, Building2, Rocket } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -30,8 +30,8 @@ export default function Hero() {
   }, []);
 
   const waMsgText = t(
-    "Halo Pak Iwan Cahyo Suryadi, saya tertarik berkolaborasi tentang VOXIA/INVEZTHINK dan implementasi AI...",
-    "Hello Mr. Iwan Cahyo Suryadi, I am interested in collaborating on VOXIA/INVEZTHINK and AI implementation..."
+    "Halo Pak Iwan Cahyo Suryadi, saya tertarik berkolaborasi tentang VOXIA/INVEZTHINK/MaxxSales dan implementasi AI...",
+    "Hello Mr. Iwan Cahyo Suryadi, I am interested in collaborating on VOXIA/INVEZTHINK/MaxxSales and AI implementation..."
   );
 
   return (
@@ -83,11 +83,11 @@ export default function Hero() {
         >
           {language === 'ID' ? (
             <>
-              Halo, saya <span className="text-white font-bold">Iwan Cahyo Suryadi</span>. Seorang inovator teknologi & pelopor AI Indonesia. Saya memimpin <span className="text-blue-500 font-semibold underline decoration-blue-500/40 underline-offset-4 font-serif">VOXIA</span> untuk transformasi digital institusi dan mendirikan <span className="text-blue-400 font-semibold underline decoration-blue-400/40 underline-offset-4 font-serif">INVEZTHINK</span> guna menghadirkan edukasi analitik pasar global teruji.
+              Halo, saya <span className="text-white font-bold">Iwan Cahyo Suryadi</span>. Seorang inovator teknologi & pelopor AI Indonesia. Saya memimpin <span className="text-blue-500 font-semibold underline decoration-blue-500/40 underline-offset-4 font-serif">VOXIA</span> untuk transformasi digital institusi, mendirikan <span className="text-blue-400 font-semibold underline decoration-blue-400/40 underline-offset-4 font-serif">INVEZTHINK</span> untuk edukasi analitik pasar, dan meluncurkan <span className="text-emerald-400 font-semibold underline decoration-emerald-400/40 underline-offset-4 font-serif">MaxxSales</span> sebagai AI Growth OS bagi pengusaha Indonesia.
             </>
           ) : (
             <>
-              Hello, I am <span className="text-white font-bold">Iwan Cahyo Suryadi</span>. A technology innovator & AI pioneer from Indonesia. I lead <span className="text-blue-500 font-semibold underline decoration-blue-500/40 underline-offset-4 font-serif">VOXIA</span> for institutional digital transformation and founded <span className="text-blue-400 font-semibold underline decoration-blue-400/40 underline-offset-4 font-serif">INVEZTHINK</span> to deliver proven global market analytics education.
+              Hello, I am <span className="text-white font-bold">Iwan Cahyo Suryadi</span>. A technology innovator & AI pioneer from Indonesia. I lead <span className="text-blue-500 font-semibold underline decoration-blue-500/40 underline-offset-4 font-serif">VOXIA</span> for institutional digital transformation, founded <span className="text-blue-400 font-semibold underline decoration-blue-400/40 underline-offset-4 font-serif">INVEZTHINK</span> for market analytics education, and launched <span className="text-emerald-400 font-semibold underline decoration-emerald-400/40 underline-offset-4 font-serif">MaxxSales</span> as an AI Growth OS for Indonesian entrepreneurs.
             </>
           )}
         </motion.p>
@@ -119,13 +119,13 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="flex items-center gap-3.5 p-4 rounded-xl bg-white/5 border border-white/5 text-left hover:border-blue-500/20 transition-colors duration-300">
-            <div className="p-2.5 rounded-lg bg-blue-500/10 text-blue-300">
-              <ShieldCheck className="w-5 h-5" />
+          <div className="flex items-center gap-3.5 p-4 rounded-xl bg-white/5 border border-white/5 text-left hover:border-emerald-500/20 transition-colors duration-300">
+            <div className="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-400">
+              <Rocket className="w-5 h-5" />
             </div>
             <div>
-              <p className="text-xs text-gray-400 uppercase tracking-wider font-mono font-serif">{t("PRESTASI", "ACHIEVEMENTS")}</p>
-              <p className="text-sm font-semibold text-white mt-0.5">{t("10+ Tahun Solusi Digital", "10+ Years Digital Solutions")}</p>
+              <p className="text-xs text-gray-400 uppercase tracking-wider font-mono">MaxxSales</p>
+              <p className="text-sm font-semibold text-white mt-0.5">{t("AI Growth OS Rilis Juli 2026", "AI Growth OS Launched Jul 2026")}</p>
             </div>
           </div>
         </motion.div>

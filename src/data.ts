@@ -66,6 +66,23 @@ export const EXPERIENCES_ID: Experience[] = [
     ],
     techStack: ['React/React Native', 'Node.js', 'MongoDB', 'Redis Caching', 'Secure API Design'],
     logoType: 'generic'
+  },
+  {
+    id: 'exp-maxxsales',
+    role: 'Founder & CEO',
+    company: 'MaxxSales - AI-Powered Sales Growth OS',
+    period: '2026 - Present',
+    location: 'Indonesia (Jakarta/Remote)',
+    description: 'Meluncurkan dan memimpin pengembangan Sistem Operasi Pertumbuhan Bisnis berbasis AI yang mengintegrasikan 3-chain tactical briefing, competitive intelligence, dan AI content generation untuk membantu pengusaha Indonesia mengatasi ketidakpastian strategi bisnis.',
+    bullets: [
+      'Merancang arsitektur 3-chain sequential AI pipeline (GapAnalyzer \u2192 ExecutionPlan \u2192 CommsWriter) yang menghasilkan briefing taktis harian terpersonalisasi.',
+      'Mengembangkan 6 modul dashboard inti: Daily Sales Pulse, Competitor War Room, Customer Insight, Strategy Forge, Content Generator, dan AI Chatbot Copilot.',
+      'Mengimplementasikan dual-backend architecture (Express.js + Cloudflare Workers + Hono) untuk skalabilitas optimal.',
+      'Membangun DNA Business Canvas — wizard profil bisnis 6-tab yang menjadi fondasi personalisasi seluruh fitur AI.'
+    ],
+    techStack: ['React 19', 'TypeScript', 'Tailwind CSS v4', 'Recharts', 'Cloudflare Workers + Hono', 'OpenRouter AI', '3-Chain Prompt Pipeline'],
+    logoType: 'maxxsales',
+    websiteUrl: 'https://maxxsales.id/'
   }
 ];
 
@@ -97,6 +114,20 @@ export const VENTURES_ID: Venture[] = [
       'Penyaringan Emosi Pengambil Keputusan Menggunakan Disiplin Komputasi'
     ],
     analyticsType: 'trading-view'
+  },
+  {
+    name: 'MaxxSales',
+    headline: 'AI-Powered Sales Growth OS untuk Pengusaha Indonesia',
+    url: 'https://maxxsales.id/',
+    role: 'Founder & CEO',
+    description: 'Sistem Operasi Pertumbuhan Bisnis berbasis AI yang mengubah data bisnis mentah menjadi strategi taktis harian. Dilengkapi 3-chain tactical briefing, competitor intelligence, customer segmentation, content generation, dan daily strategy execution dalam satu platform terpadu.',
+    features: [
+      'Daily Sales Pulse — Briefing taktis harian dengan 3-chain AI pipeline (Gap Analyzer \u2192 Execution Plan \u2192 Comms Writer)',
+      'Competitor War Room — Profil kompetitor dengan AI SWOT analysis dan radar chart comparison',
+      'Customer Insight — Segmentasi pelanggan dengan estimasi LTV, analisis churn risk, dan rekomendasi retensi berbasis AI',
+      'Strategy Forge — Blueprint strategi marketing 5-11 pillar berdasarkan Business DNA'
+    ],
+    analyticsType: 'maxxsales'
   }
 ];
 
@@ -104,7 +135,7 @@ export const QA_ITEMS_ID: QAItem[] = [
   {
     category: 'about',
     question: 'Siapakah Iwan Cahyo Suryadi?',
-    answer: 'Iwan Cahyo Suryadi adalah seorang Tech Entrepreneur, AI Pioneer, dan konsultan transformasi digital yang berbasis di Indonesia. Sebagai pemimpin dari VOXIA dan INVEZTHINK, beliau berfokus pada pemanfaatan kecerdasan buatan yang fungsional dan aman demi mengangkat daya saing digital Indonesia.'
+    answer: 'Iwan Cahyo Suryadi adalah seorang Tech Entrepreneur, AI Pioneer, dan konsultan transformasi digital yang berbasis di Indonesia. Sebagai pemimpin dari VOXIA, INVEZTHINK, dan MaxxSales, beliau berfokus pada pemanfaatan kecerdasan buatan yang fungsional dan aman demi mengangkat daya saing digital Indonesia.'
   },
   {
     category: 'voxia',
@@ -120,6 +151,11 @@ export const QA_ITEMS_ID: QAItem[] = [
     category: 'collaboration',
     question: 'Bagaimana saya dapat berkolaborasi atau berkonsultasi langsung?',
     answer: 'Anda dapat segera membuka sesi diskusi pribadi dengan menekan tombol WhatsApp atau merujuk ke LinkedIn. Pak Iwan Cahyo sangat menyambut baik diskusi kemitraan strategis, proyek implementasi AI korporat, maupun kegiatan seminar kepemimpinan teknologi.'
+  },
+  {
+    category: 'maxxsales',
+    question: 'Apa itu MaxxSales dan bagaimana cara kerjanya?',
+    answer: 'MaxxSales (maxxsales.id) adalah AI-Powered Sales Growth Operating System yang dirancang khusus untuk pengusaha Indonesia. Platform ini mengatasi 3 masalah utama pengusaha: (1) tidak punya strategi — melalui Daily Sales Pulse dengan 3-chain AI briefing harian (GapAnalyzer \u2192 ExecutionPlan \u2192 CommsWriter), (2) tidak tahu kelemahan kompetitor — melalui Competitor War Room dengan AI SWOT analysis, (3) buang waktu 3 jam sehari mikir konten — melalui AI Content Generator. Cukup isi DNA Business Canvas sekali, dan MaxxSales menghasilkan briefing harian yang siap eksekusi.'
   }
 ];
 
@@ -190,6 +226,23 @@ export const EXPERIENCES_EN: Experience[] = [
     ],
     techStack: ['React/React Native', 'Node.js', 'MongoDB', 'Redis Caching', 'Secure API Design'],
     logoType: 'generic'
+  },
+  {
+    id: 'exp-maxxsales',
+    role: 'Founder & CEO',
+    company: 'MaxxSales - AI-Powered Sales Growth OS',
+    period: '2026 - Present',
+    location: 'Indonesia (Jakarta/Remote)',
+    description: 'Launched and led the development of an AI-powered Business Growth Operating System integrating 3-chain tactical briefing, competitive intelligence, and AI content generation to help Indonesian entrepreneurs overcome business strategy uncertainty.',
+    bullets: [
+      'Architected a 3-chain sequential AI pipeline (GapAnalyzer \u2192 ExecutionPlan \u2192 CommsWriter) generating personalized daily tactical briefings.',
+      'Developed 6 core dashboard modules: Daily Sales Pulse, Competitor War Room, Customer Insight, Strategy Forge, Content Generator, and AI Chatbot Copilot.',
+      'Implemented dual-backend architecture (Express.js + Cloudflare Workers + Hono) for optimal scalability.',
+      'Built DNA Business Canvas — a 6-tab business profile wizard serving as the personalization foundation for all AI features.'
+    ],
+    techStack: ['React 19', 'TypeScript', 'Tailwind CSS v4', 'Recharts', 'Cloudflare Workers + Hono', 'OpenRouter AI', '3-Chain Prompt Pipeline'],
+    logoType: 'maxxsales',
+    websiteUrl: 'https://maxxsales.id/'
   }
 ];
 
@@ -221,6 +274,20 @@ export const VENTURES_EN: Venture[] = [
       'Decision-Maker Emotion Filtering via Computational Discipline'
     ],
     analyticsType: 'trading-view'
+  },
+  {
+    name: 'MaxxSales',
+    headline: 'AI-Powered Sales Growth OS for Indonesian Entrepreneurs',
+    url: 'https://maxxsales.id/',
+    role: 'Founder & CEO',
+    description: 'An AI-powered Business Growth Operating System that transforms raw business data into daily tactical strategies. Equipped with 3-chain tactical briefing, competitor intelligence, customer segmentation, content generation, and daily strategy execution in one unified platform.',
+    features: [
+      'Daily Sales Pulse — AI-powered tactical briefing with 3-chain pipeline (Gap Analyzer \u2192 Execution Plan \u2192 Comms Writer)',
+      'Competitor War Room — Competitor profiles with AI SWOT analysis and radar chart comparison',
+      'Customer Insight — Customer segmentation with LTV estimation, churn risk analysis, and AI retention recommendations',
+      'Strategy Forge — 5-11 pillar marketing strategy blueprint based on Business DNA'
+    ],
+    analyticsType: 'maxxsales'
   }
 ];
 
@@ -228,7 +295,7 @@ export const QA_ITEMS_EN: QAItem[] = [
   {
     category: 'about',
     question: 'Who is Iwan Cahyo Suryadi?',
-    answer: 'Iwan Cahyo Suryadi is a Tech Entrepreneur, AI Pioneer, and digital transformation consultant based in Indonesia. Leading VOXIA and INVEZTHINK, he focuses on leveraging functional and secure artificial intelligence to elevate Indonesia\'s digital competitiveness.'
+    answer: 'Iwan Cahyo Suryadi is a Tech Entrepreneur, AI Pioneer, and digital transformation consultant based in Indonesia. Leading VOXIA, INVEZTHINK, and MaxxSales, he focuses on leveraging functional and secure artificial intelligence to elevate Indonesia\'s digital competitiveness.'
   },
   {
     category: 'voxia',
@@ -244,6 +311,11 @@ export const QA_ITEMS_EN: QAItem[] = [
     category: 'collaboration',
     question: 'How can I collaborate or consult directly?',
     answer: 'You can immediately start a private discussion session by tapping the WhatsApp button or visiting LinkedIn. Mr. Iwan Cahyo highly welcomes strategic partnership talks, corporate AI implementation projects, or technology leadership seminar events.'
+  },
+  {
+    category: 'maxxsales',
+    question: 'What is MaxxSales and how does it work?',
+    answer: 'MaxxSales (maxxsales.id) is an AI-Powered Sales Growth Operating System designed specifically for Indonesian entrepreneurs. The platform solves 3 core problems: (1) no clear strategy — through Daily Sales Pulse with 3-chain AI daily briefing (GapAnalyzer \u2192 ExecutionPlan \u2192 CommsWriter), (2) not knowing competitor weaknesses — through Competitor War Room with AI SWOT analysis, (3) wasting 3 hours daily on content — through AI Content Generator. Fill in the DNA Business Canvas once, and MaxxSales delivers execution-ready daily briefings.'
   }
 ];
 
@@ -259,7 +331,8 @@ export const SKILLS: SkillItem[] = [
   { name: 'Educational Platform Curriculum Design', level: 85, category: 'E_Learning' },
   { name: 'National Digital Transformation Synergy', level: 94, category: 'Consulting' },
   { name: 'Enterprise Cloud System Architecture', level: 91, category: 'Architecture' },
-  { name: 'Cross-functional Technology Leadership', level: 96, category: 'Consulting' }
+  { name: 'Cross-functional Technology Leadership', level: 96, category: 'Consulting' },
+  { name: 'AI SaaS Platform Architecture', level: 90, category: 'Architecture' }
 ];
 
 export const MOCK_MARKET_DATA: MarketSignal[] = [

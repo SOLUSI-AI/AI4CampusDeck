@@ -24,6 +24,10 @@ export default function ContactCTA() {
       template = language === 'ID'
         ? `Halo Pak Iwan Cahyo, saya ${name || '[Nama Anda]'}. Saya tertarik mempelajari platform analisis pasar finansial berbasis kecerdasan buatan di INVEZTHINK (app.invezthink.com).`
         : `Hello Mr. Iwan Cahyo, I am ${name || '[Your Name]'}. I am interested in learning about the AI-powered financial market analytics platform at INVEZTHINK (app.invezthink.com).`;
+    } else if (intent === 'maxxsales_growth') {
+      template = language === 'ID'
+        ? `Halo Pak Iwan Cahyo, saya ${name || '[Nama Anda]'}. Saya tertarik menggunakan MaxxSales sebagai AI Growth OS untuk mengembangkan bisnis saya dengan daily tactical briefing dan AI content generation.`
+        : `Hello Mr. Iwan Cahyo, I am ${name || '[Your Name]'}. I am interested in using MaxxSales as an AI Growth OS to scale my business with daily tactical briefing and AI content generation.`;
     } else {
       template = language === 'ID'
         ? `Halo Pak Iwan Cahyo, saya ${name || '[Nama Anda]'}. Saya ingin berdiskusi terkait kolaborasi bisnis, pembicara seminar teknologi, atau partnership lainnya.`
@@ -61,8 +65,8 @@ export default function ContactCTA() {
             
             <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
               {t(
-                "Siap mengotomatisasi pilar bisnis Anda menggunakan VOXIA Solusi AI Terpadu, atau ingin menguasai taktis analisis pergerakan pasar modern lewat INVEZTHINK? Hubungi saya kapan saja. Sesi kolaborasi eksekutif dan kemitraan selalu terbuka.",
-                "Ready to automate your business pillars using VOXIA Integrated AI Solutions, or want to master modern market trend analysis with INVEZTHINK? Reach out anytime. Executive collaborations and strategic partnerships are always open."
+                "Siap mengotomatisasi pilar bisnis Anda menggunakan VOXIA Solusi AI Terpadu, ingin menguasai taktis analisis pergerakan pasar modern lewat INVEZTHINK, atau mencoba MaxxSales sebagai AI Growth OS? Hubungi saya kapan saja. Sesi kolaborasi eksekutif dan kemitraan selalu terbuka.",
+                "Ready to automate your business pillars using VOXIA Integrated AI Solutions, master modern market trend analysis with INVEZTHINK, or try MaxxSales as your AI Growth OS? Reach out anytime. Executive collaborations and strategic partnerships are always open."
               )}
             </p>
 
@@ -123,7 +127,7 @@ export default function ContactCTA() {
                 {/* Intent Type Selector */}
                 <div>
                   <label className="block text-xs font-mono text-gray-400 uppercase tracking-wider mb-2 text-left">{t("Tujuan Hubungan:", "Inquiry Purpose:")}</label>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                     <button
                       type="button"
                       onClick={() => setIntent('voxia_consulting')}
@@ -147,6 +151,18 @@ export default function ContactCTA() {
                       id="intent-invezthink-btn"
                     >
                       {t("Edukasi Analitik (INVEZTHINK)", "Analytical Education (INVEZTHINK)")}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setIntent('maxxsales_growth')}
+                      className={`p-3 text-left rounded-xl text-xs font-semibold border transition-all cursor-pointer ${
+                        intent === 'maxxsales_growth'
+                          ? 'bg-emerald-500/10 text-emerald-300 border-emerald-500/60'
+                          : 'bg-white/2 text-gray-400 border-white/5 hover:bg-white/5'
+                      }`}
+                      id="intent-maxxsales-btn"
+                    >
+                      {t("AI Growth OS (MaxxSales)", "AI Growth OS (MaxxSales)")}
                     </button>
                   </div>
                 </div>

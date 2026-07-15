@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { VENTURES_ID, VENTURES_EN, MOCK_MARKET_DATA } from '../data';
-import { ExternalLink, Terminal, TrendingUp, Cpu, Sparkles, BookOpen, AlertTriangle, ShieldCheck, Play, RotateCcw } from 'lucide-react';
+import { ExternalLink, Terminal, TrendingUp, Cpu, Sparkles, BookOpen, AlertTriangle, ShieldCheck, Play, RotateCcw, BarChart3, Rocket } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function CompanySection() {
@@ -16,6 +16,11 @@ export default function CompanySection() {
   // INVEZTHINK simulator states
   const [volatility, setVolatility] = useState<number>(50);
   const [candlesticks, setCandlesticks] = useState<{ open: number; close: number; high: number; low: number; signal: 'BUY' | 'SELL' | 'HOLD' }[]>([]);
+
+  // MaxxSales Daily Briefing Simulator states
+  const [briefingSteps, setBriefingSteps] = useState<string[]>([]);
+  const [isBriefingRunning, setIsBriefingRunning] = useState(false);
+  const [briefingIndustry, setBriefingIndustry] = useState('F&B');
 
   // Initialize VOXIA default logger
   useEffect(() => {
@@ -137,6 +142,66 @@ export default function CompanySection() {
     }, 700);
   };
 
+  // Initialize MaxxSales briefing steps when language changes
+  useEffect(() => {
+    resetBriefing();
+  }, [language]);
+
+  const resetBriefing = () => {
+    setBriefingSteps(
+      language === 'ID'
+        ? [
+            'ready > Klik "Generate Daily Briefing" untuk memulai MaxxSales AI pipeline.',
+            'info  > 3-Chain Pipeline: GapAnalyzer \u2192 ExecutionPlan \u2192 CommsWriter.',
+            'info  > Target: Briefing taktis harian untuk pengusaha Indonesia.'
+          ]
+        : [
+            'ready > Click "Generate Daily Briefing" to start MaxxSales AI pipeline.',
+            'info  > 3-Chain Pipeline: GapAnalyzer \u2192 ExecutionPlan \u2192 CommsWriter.',
+            'info  > Target: Daily tactical briefing for Indonesian entrepreneurs.'
+          ]
+    );
+  };
+
+  const runBriefingSimulation = () => {
+    if (isBriefingRunning) return;
+    setIsBriefingRunning(true);
+    setBriefingSteps([
+      language === 'ID'
+        ? 'initiating > Menghubungkan ke MaxxSales AI Growth Engine...'
+        : 'initiating > Connecting to MaxxSales AI Growth Engine...'
+    ]);
+
+    const industryLabel = briefingIndustry || 'F&B';
+
+    const steps = language === 'ID'
+      ? [
+          'dna       > Menganalisis DNA Bisnis: ' + industryLabel + ' — Memindai pola pendapatan & segmentasi pasar...',
+          'gap       > [GapAnalyzer] Mengidentifikasi 3 kesenjangan strategis: Brand Awareness (-34%), Retensi Pelanggan (-28%), Konversi Konten (-41%)',
+          'strategy  > [ExecutionPlan] Menyusun 3 prioritas taktis: (1) Kampanye Branding Multi-Channel (2) Program Loyalitas Pelanggan (3) Optimalisasi Funnel Konten',
+          'comms     > [CommsWriter] Menulis template konten: 3 headline, 2 caption story, 1 WhatsApp blast — siap copy-paste!',
+          'success   > Briefing harian siap! Waktu: 12 detik. Output: 1 strategi taktis + 6 konten siap pakai.'
+        ]
+      : [
+          'dna       > Analyzing Business DNA: ' + industryLabel + ' — Scanning revenue patterns & market segmentation...',
+          'gap       > [GapAnalyzer] Identified 3 strategic gaps: Brand Awareness (-34%), Customer Retention (-28%), Content Conversion (-41%)',
+          'strategy  > [ExecutionPlan] Compiled 3 tactical priorities: (1) Multi-Channel Branding Campaign (2) Customer Loyalty Program (3) Content Funnel Optimization',
+          'comms     > [CommsWriter] Generated content templates: 3 headlines, 2 story captions, 1 WhatsApp blast — ready to copy-paste!',
+          'success   > Daily briefing ready! Time: 12 seconds. Output: 1 tactical strategy + 6 ready-to-use content pieces.'
+        ];
+
+    let currentStep = 0;
+    const interval = setInterval(() => {
+      if (currentStep < steps.length) {
+        setBriefingSteps(prev => [...prev, steps[currentStep]]);
+        currentStep++;
+      } else {
+        clearInterval(interval);
+        setIsBriefingRunning(false);
+      }
+    }, 800);
+  };
+
   // Generate Candlesticks for INVEZTHINK based on volatility slider
   useEffect(() => {
     const generateCandles = () => {
@@ -187,7 +252,7 @@ export default function CompanySection() {
         </div>
 
         {/* Outer Bento Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
 
           {/* VOXIA Solusi AI Terpadu Card (CEO & Founder) */}
           <div className="glassmorphism p-6 sm:p-8 rounded-2xl flex flex-col justify-between hover:border-blue-500/30 transition-all duration-300 relative overflow-hidden group border border-[#1F2937]/50">
@@ -463,6 +528,132 @@ export default function CompanySection() {
                     "Moving the slider regenerates the AI pattern algorithm scenarios."
                   )}
                 </p>
+              </div>
+            </div>
+          </div>
+
+          {/* MaxxSales Card (Founder & CEO) */}
+          <div className="glassmorphism p-6 sm:p-8 rounded-2xl flex flex-col justify-between hover:border-blue-500/30 transition-all duration-300 relative overflow-hidden group border border-[#1F2937]/50">
+            {/* Branding Top */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-bl-full pointer-events-none group-hover:scale-110 transition-transform duration-500" />
+            
+            <div>
+              <div className="flex items-center gap-3">
+                <span className="px-3 py-1 rounded-full bg-blue-500/10 text-blue-500 font-mono text-[10px] tracking-widest font-bold uppercase border border-blue-500/20">
+                  FOUNDER & CEO
+                </span>
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              </div>
+
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white mt-4 flex items-center justify-between">
+                <span>MaxxSales</span>
+                <a 
+                  href="https://maxxsales.id/" 
+                  target="_blank" 
+                  rel="noopener" 
+                  className="p-1 px-3 text-xs flex items-center gap-1.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/20 transition-all font-sans"
+                  id="maxxsales-link-btn"
+                >
+                  maxxsales.id <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </h3>
+              
+              <p className="text-sm font-medium text-emerald-500 italic font-mono mt-1">
+                {t("AI-Powered Sales Growth OS untuk Pengusaha Indonesia", "AI-Powered Sales Growth OS for Indonesian Entrepreneurs")}
+              </p>
+
+              <p className="text-gray-300 font-sans text-[14px] sm:text-base leading-relaxed mt-4">
+                {t(
+                  "Sistem Operasi Pertumbuhan Bisnis berbasis AI yang mengubah data bisnis mentah menjadi strategi taktis harian. Dilengkapi 3-chain tactical briefing, competitor intelligence, customer segmentation, dan content generation dalam satu platform terpadu.",
+                  "An AI-powered Business Growth Operating System that transforms raw business data into daily tactical strategies. Equipped with 3-chain tactical briefing, competitor intelligence, customer segmentation, and content generation in one unified platform."
+                )}
+              </p>
+
+              {/* Core Features */}
+              <div className="mt-6 space-y-2.5">
+                <p className="text-xs font-mono text-gray-400 uppercase tracking-widest">{t("Fitur Unggulan:", "Key Features:")}</p>
+                {VENTURES[2].features.map((feature, idx) => (
+                  <div key={idx} className="flex items-start gap-2 text-sm text-gray-300">
+                    <span className="text-emerald-500 font-bold mt-1 select-none">•</span>
+                    <span>{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* INTERACTIVE COMPONENT: MaxxSales DAILY BRIEFING SIMULATOR */}
+            <div className="mt-8 pt-6 border-t border-white/5">
+              <div className="bg-[#0b0c0e] rounded-xl border border-white/5 overflow-hidden">
+                {/* Simulator Header */}
+                <div className="bg-[#050608] px-4 py-2 flex items-center justify-between border-b border-white/5">
+                  <div className="flex items-center gap-2">
+                    <BarChart3 className="w-4 h-4 text-emerald-500" />
+                    <span className="text-xs font-mono text-gray-300 font-semibold uppercase">MaxxSales Daily Briefing - Sandbox</span>
+                  </div>
+                  {/* Status lights */}
+                  <div className="flex gap-1">
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-500/40" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/40" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 animate-pulse" />
+                  </div>
+                </div>
+
+                {/* Industry Selector */}
+                <div className="px-4 py-3 border-b border-white/5 bg-[#08090a] flex items-center gap-3">
+                  <Rocket className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                  <span className="text-[10px] font-mono text-gray-400 uppercase tracking-wider">{t("DNA BISNIS:", "BUSINESS DNA:")}</span>
+                  <select
+                    value={briefingIndustry}
+                    onChange={(e) => setBriefingIndustry(e.target.value)}
+                    disabled={isBriefingRunning}
+                    className="flex-1 px-2.5 py-1.5 rounded-lg bg-[#0A0A0B] text-xs text-gray-200 border border-[#1F2937] focus:border-emerald-500 focus:outline-none transition-all cursor-pointer"
+                  >
+                    <option value="F&B">{t("F&B / Kuliner", "F&B / Culinary")}</option>
+                    <option value="Retail">{t("Retail / E-commerce", "Retail / E-commerce")}</option>
+                    <option value="Healthcare">{t("Kesehatan", "Healthcare")}</option>
+                    <option value="Education">{t("Pendidikan", "Education")}</option>
+                    <option value="Technology">{t("Teknologi", "Technology")}</option>
+                    <option value="Service">{t("Jasa", "Services")}</option>
+                  </select>
+                </div>
+
+                {/* Terminal screen text output */}
+                <div className="p-4 font-mono text-xs text-slate-300 h-44 overflow-y-auto space-y-1 bg-[#020304]">
+                  {briefingSteps.map((log, lIdx) => (
+                    <div key={lIdx} className="leading-relaxed text-left">
+                      {log.startsWith('success') && <span className="text-emerald-400">✅ </span>}
+                      {log.startsWith('ready') && <span className="text-emerald-400">💡 </span>}
+                      {log.startsWith('dna') && <span className="text-emerald-500 font-semibold">🧬 </span>}
+                      {log.startsWith('gap') && <span className="text-emerald-400">🔍 </span>}
+                      {log.startsWith('strategy') && <span className="text-emerald-500">📋 </span>}
+                      {log.startsWith('comms') && <span className="text-emerald-400">✍️ </span>}
+                      <span className={log.includes('>') ? 'text-gray-400' : 'text-slate-200'}>{log}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Action button bar */}
+                <div className="p-3 bg-[#050608] flex items-center justify-between border-t border-white/5">
+                  <span className="text-[10px] text-gray-500 font-mono">{t("Simulasi Sisi-Klien v1.0", "Client-Side Simulation v1.0")}</span>
+                  <div className="flex gap-2">
+                    <button 
+                      onClick={resetBriefing}
+                      disabled={isBriefingRunning}
+                      className="p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-gray-400 border border-[#1F2937] hover:text-white transition-colors"
+                      title="Reset briefing"
+                    >
+                      <RotateCcw className="w-4 h-4" />
+                    </button>
+                    <button 
+                      onClick={runBriefingSimulation}
+                      disabled={isBriefingRunning}
+                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 disabled:bg-emerald-800 text-white font-mono text-xs font-semibold shadow-lg shadow-emerald-500/10 transition-all cursor-pointer"
+                    >
+                      <Play className="w-3.5 h-3.5 fill-current" />
+                      {isBriefingRunning ? t("Memproses...", "Processing...") : t("Generate Daily Briefing", "Generate Daily Briefing")}
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
