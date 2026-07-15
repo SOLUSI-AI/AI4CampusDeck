@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, MessageSquare, ArrowUpRight, CheckCircle2, Send, Heart, Shield, HelpCircle, FileDown } from 'lucide-react';
+import { Mail, MessageSquare, ArrowUpRight, Heart, Shield } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function ContactCTA() {
@@ -69,21 +69,6 @@ export default function ContactCTA() {
                 "Ready to automate your business pillars using VOXIA Integrated AI Solutions, master modern market trend analysis with INVEZTHINK, or try MaxxSales as your AI Growth OS? Reach out anytime. Executive collaborations and strategic partnerships are always open."
               )}
             </p>
-
-            {/* Download CV Button */}
-            <button
-              onClick={() => window.print()}
-              className="w-full flex items-center gap-3.5 p-4 rounded-xl bg-gradient-to-r from-blue-600/20 to-blue-500/10 border border-blue-500/30 hover:border-blue-500/60 hover:from-blue-600/30 hover:to-blue-500/20 transition-all group cursor-pointer"
-              id="download-cv-btn"
-            >
-              <div className="p-2 bg-blue-500/10 text-blue-500 rounded-lg group-hover:scale-105 transition-transform">
-                <FileDown className="w-5 h-5" />
-              </div>
-              <div className="text-left">
-                <p className="text-xs text-blue-400 uppercase tracking-wider font-mono">{t("DOWNLOAD CV", "DOWNLOAD CV")}</p>
-                <p className="text-sm font-semibold text-white mt-0.5">{t("PDF — Siap Upload ke Upwork", "PDF — Ready for Upwork")}</p>
-              </div>
-            </button>
 
             {/* Direct Quick Info Contacts */}
             <div className="space-y-4 pt-2">
@@ -227,9 +212,20 @@ export default function ContactCTA() {
             <p className="text-[10px] text-gray-500 mt-1">{t("Platform Inovasi Digital AI terintegrasi Indonesia.", "Integrated AI and Digital Innovation Platform in Indonesia.")}</p>
           </div>
           
-          <div className="flex items-center gap-1.5 bg-white/5 px-3 py-1.5 rounded-lg border border-white/5">
-            <span>{t("Dibuat dengan dedikasi transformasi digital", "Built with digital transformation dedication")}</span>
-            <Heart className="w-3 h-3 text-red-500 fill-current animate-pulse" />
+          <div className="flex items-center gap-3">
+            <button
+              type="button"
+              onClick={() => window.print()}
+              className="text-gray-500 hover:text-blue-400 transition-colors cursor-pointer"
+              id="download-cv-btn"
+            >
+              {t("Download CV", "Download CV")}
+            </button>
+            <span className="text-gray-600">|</span>
+            <div className="flex items-center gap-1.5 bg-white/5 px-3 py-1.5 rounded-lg border border-white/5">
+              <span>{t("Dibuat dengan dedikasi transformasi digital", "Built with digital transformation dedication")}</span>
+              <Heart className="w-3 h-3 text-red-500 fill-current animate-pulse" />
+            </div>
           </div>
         </div>
 
